@@ -1,0 +1,92 @@
+app:
+  description: 深度思考测试
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: chat
+  name: deepseek
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.7@8b9d2f57d314120744c245b6fe4f8701e1a7490a500d9fb74e9e9dceeaea5f70
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 5
+    strategy: react
+    tools: []
+  annotation_reply:
+    embedding_model:
+      embedding_model_name: netease-youdao/bce-embedding-base_v1
+      embedding_provider_name: langgenius/siliconflow/siliconflow
+    enabled: true
+    id: 62526270-e624-43ce-9f15-e04ea5aadff5
+    score_threshold: 0.9
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    reranking_enable: false
+    retrieval_model: multiple
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .MPGA
+    allowed_file_types:
+    - image
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: true
+    image:
+      detail: high
+      enabled: true
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: Qwen/Qwen2-VL-72B-Instruct
+    provider: langgenius/siliconflow/siliconflow
+  more_like_this:
+    enabled: false
+  opening_statement: 我是一个 AI 助手，请尽情向我提问吧
+  pre_prompt: ''
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions:
+  - 最近的热点新闻
+  - 全球经济情况
+  suggested_questions_after_answer:
+    enabled: true
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5
