@@ -1,0 +1,1067 @@
+app:
+  description: 测试 workflows、echarts、mermaid 输出
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 测试 Chatflow
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.7@8b9d2f57d314120744c245b6fe4f8701e1a7490a500d9fb74e9e9dceeaea5f70
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/echarts:0.0.1@fe95412f101f2735530ea05f479ab5e8fbe1d4f4b2847f09e490e7d1d0125de5
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions: []
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 1
+    opening_statement: 请输入你的问题，跟我聊天吧~
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: true
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: question-classifier
+      id: 1741075946163-source-1741075980018-target
+      source: '1741075946163'
+      sourceHandle: source
+      target: '1741075980018'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: question-classifier
+        targetType: answer
+      id: 1741075980018-1-answer-target
+      source: '1741075980018'
+      sourceHandle: '1'
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: question-classifier
+        targetType: answer
+      id: 1741075980018-1741076011160-17410762966370-target
+      source: '1741075980018'
+      sourceHandle: '1741076011160'
+      target: '17410762966370'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1741075980018-2-1741076369221-target
+      source: '1741075980018'
+      sourceHandle: '2'
+      target: '1741076369221'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1741076369221-source-llm-target
+      source: '1741076369221'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1741075980018-1741076008985-1741076369221-target
+      source: '1741075980018'
+      sourceHandle: '1741076008985'
+      target: '1741076369221'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: llm-source-1741076529495-target
+      source: llm
+      sourceHandle: source
+      target: '1741076529495'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: tool
+      id: 1741075980018-1741923084825-1741923081144-target
+      source: '1741075980018'
+      sourceHandle: '1741923084825'
+      target: '1741923081144'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: answer
+      id: 1741923081144-source-1741923151688-target
+      source: '1741923081144'
+      sourceHandle: source
+      target: '1741923151688'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1741075980018-1741943913438-1741944004815-target
+      source: '1741075980018'
+      sourceHandle: '1741943913438'
+      target: '1741944004815'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1741944004815-source-1741943907263-target
+      source: '1741944004815'
+      sourceHandle: source
+      target: '1741943907263'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1741075980018-1742133635142-1742133594498-target
+      source: '1741075980018'
+      sourceHandle: '1742133635142'
+      target: '1742133594498'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1742133594498-source-1742133668194-target
+      source: '1742133594498'
+      sourceHandle: source
+      target: '1742133668194'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: llm
+      id: 1741075980018-1742871620382-1742871637054-target
+      source: '1741075980018'
+      sourceHandle: '1742871620382'
+      target: '1742871637054'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1742871637054-source-1742871666982-target
+      source: '1742871637054'
+      sourceHandle: source
+      target: '1742871666982'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: agent
+      id: 1741075980018-1743130629601-1743130472185-target
+      source: '1741075980018'
+      sourceHandle: '1743130629601'
+      target: '1743130472185'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: agent
+        targetType: answer
+      id: 1743130472185-source-17431306588780-target
+      source: '1743130472185'
+      sourceHandle: source
+      target: '17431306588780'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1741075946163'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1741076369221'
+          - result
+        desc: ''
+        memory:
+          query_prompt_template: '{{#sys.query#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: Qwen/QVQ-72B-Preview
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: d43c483a-ef08-43f1-b980-3a284fc7eac2
+          role: system
+          text: 根据{{#context#}}，回答{{#sys.query#}}
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: llm
+      position:
+        x: 1215.2687533499006
+        y: 505.9902695820093
+      positionAbsolute:
+        x: 1215.2687533499006
+        y: 505.9902695820093
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 很抱歉，我不能回答你的问题。如果你需要更多帮助，请查看[帮助文档](https://docs.dify.ai)。
+        desc: ''
+        selected: false
+        title: 回复无法回答
+        type: answer
+        variables: []
+      height: 134
+      id: answer
+      position:
+        x: 840
+        y: 185
+      positionAbsolute:
+        x: 840
+        y: 185
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        classes:
+        - id: '1'
+          name: 用户询问无关问题
+        - id: '2'
+          name: 用户询问和 Dify 相关问题
+        - id: '1741076008985'
+          name: 用户请求对技术名词的解释
+        - id: '1741076011160'
+          name: 用户询问社群加入方式
+        - id: '1741923084825'
+          name: 生成图表
+        - id: '1741943913438'
+          name: 生成 mermaid
+        - id: '1742133635142'
+          name: 生成图片
+        - id: '1742871620382'
+          name: 文档内容解析
+        - id: '1742954953756'
+          name: 识别图片内容
+        - id: '1743130629601'
+          name: 获取当前时间或者搜索仓库
+        desc: ''
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-ai/DeepSeek-V3
+          provider: langgenius/siliconflow/siliconflow
+        query_variable_selector:
+        - sys
+        - query
+        selected: false
+        title: 问题分类器
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 476
+      id: '1741075980018'
+      position:
+        x: 508.54797857910535
+        y: 445.26632788799236
+      positionAbsolute:
+        x: 508.54797857910535
+        y: 445.26632788799236
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: 请访问 https://github.com/langgenius 查看 README
+        desc: ''
+        selected: false
+        title: 回复社群加入方式
+        type: answer
+        variables: []
+      height: 118
+      id: '17410762966370'
+      position:
+        x: 826.0711909872621
+        y: 830.1555626293489
+      positionAbsolute:
+        x: 826.0711909872621
+        y: 830.1555626293489
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - 163de8ad-371b-4a0f-acf4-3f38e311dea8
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: netease-youdao/bce-reranker-base_v1
+            provider: langgenius/siliconflow/siliconflow
+          top_k: 4
+        query_variable_selector:
+        - sys
+        - query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索
+        type: knowledge-retrieval
+      height: 92
+      id: '1741076369221'
+      position:
+        x: 877.4951347910046
+        y: 505.9902695820093
+      positionAbsolute:
+        x: 877.4951347910046
+        y: 505.9902695820093
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#llm.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 105
+      id: '1741076529495'
+      position:
+        x: 1553.7928349854838
+        y: 505.9902695820093
+      positionAbsolute:
+        x: 1553.7928349854838
+        y: 505.9902695820093
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: chart title
+            ja_JP: chart title
+            pt_BR: chart title
+            zh_Hans: 图表的标题
+          label:
+            en_US: title
+            ja_JP: title
+            pt_BR: title
+            zh_Hans: 标题
+          llm_description: chart title
+          max: null
+          min: null
+          name: title
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: data for generating chart, each number should be separated by ";"
+            ja_JP: data for generating chart, each number should be separated by ";"
+            pt_BR: data for generating chart, each number should be separated by ";"
+            zh_Hans: 用于生成线性图表的数据，每个数字之间用 ";" 分隔
+          label:
+            en_US: data
+            ja_JP: data
+            pt_BR: data
+            zh_Hans: 数据
+          llm_description: data for generating linear chart, data should be a string
+            contains a list of numbers like "1;2;3;4;5"
+          max: null
+          min: null
+          name: data
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: X axis for chart, each text should be separated by ";"
+            ja_JP: X axis for chart, each text should be separated by ";"
+            pt_BR: X axis for chart, each text should be separated by ";"
+            zh_Hans: 线性图表的 x 轴，每个文本之间用 ";" 分隔
+          label:
+            en_US: X Axis
+            ja_JP: X Axis
+            pt_BR: X Axis
+            zh_Hans: x 轴
+          llm_description: x axis for linear chart, x axis should be a string contains
+            a list of texts like "a;b;c;1;2" in order to match the data
+          max: null
+          min: null
+          name: x_axis
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          data: ''
+          title: ''
+          x_axis: ''
+        provider_id: langgenius/echarts/echarts
+        provider_name: langgenius/echarts/echarts
+        provider_type: builtin
+        selected: false
+        title: 线性图表
+        tool_configurations: {}
+        tool_label: 线性图表
+        tool_name: line_chart
+        tool_parameters:
+          data:
+            type: mixed
+            value: 34;2;36;123;4;112;4;43;32;12
+          title:
+            type: mixed
+            value: Echats 演示
+          x_axis:
+            type: mixed
+            value: 1;2;3;4;5;6;7;8;9;10
+        type: tool
+      height: 54
+      id: '1741923081144'
+      position:
+        x: 816.1555339608539
+        y: 1107.56451257939
+      positionAbsolute:
+        x: 816.1555339608539
+        y: 1107.56451257939
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1741923081144.text#}}{{#1741923081144.files#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 4
+        type: answer
+        variables: []
+      height: 124
+      id: '1741923151688'
+      position:
+        x: 1190.6741674909852
+        y: 1105.2237711198268
+      positionAbsolute:
+        x: 1190.6741674909852
+        y: 1105.2237711198268
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1741944004815.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 105
+      id: '1741943907263'
+      position:
+        x: 1190.6741674909852
+        y: 1299.4756635851545
+      positionAbsolute:
+        x: 1190.6741674909852
+        y: 1299.4756635851545
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-ai/DeepSeek-V2.5
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 65b9f0fb-9ece-41cd-b26a-54101a8030a2
+          role: system
+          text: 生成一段 mermaid 图表内容，展示一个生产流水线
+        selected: false
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1741944004815'
+      position:
+        x: 816.1555339608539
+        y: 1299.4756635851545
+      positionAbsolute:
+        x: 816.1555339608539
+        y: 1299.4756635851545
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: OpenGVLab/InternVL2-26B
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 5dae5090-efca-42e7-8dd4-d6d30a5d62d5
+          role: system
+          text: 按照用户输入的提示词{{#sys.query#}}，生成图片
+        selected: false
+        title: LLM 3
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1742133594498'
+      position:
+        x: 814.9734138097411
+        y: 1461.15373431543
+      positionAbsolute:
+        x: 814.9734138097411
+        y: 1461.15373431543
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1742133594498.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 6
+        type: answer
+        variables: []
+      height: 105
+      id: '1742133668194'
+      position:
+        x: 1172.9198098794507
+        y: 1450.616458977916
+      positionAbsolute:
+        x: 1172.9198098794507
+        y: 1450.616458977916
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: 解析 {{#sys.files#}} 文档的内容，按照 {{#sys.query#}} 生成总结并输出
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 50
+        model:
+          completion_params: {}
+          mode: chat
+          name: Qwen/Qwen2.5-32B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 08abaa9a-59b5-4a94-9d09-7f126dcc7735
+          role: system
+          text: 解析 {{#sys.files#}} 文档中的内容，生成总结
+        selected: false
+        title: LLM 4
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1742871637054'
+      position:
+        x: 806.6108965654048
+        y: 1615.9017197958578
+      positionAbsolute:
+        x: 806.6108965654048
+        y: 1615.9017197958578
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1742871637054.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 7
+        type: answer
+        variables: []
+      height: 105
+      id: '1742871666982'
+      position:
+        x: 1167.17316134534
+        y: 1608.1927881789509
+      positionAbsolute:
+        x: 1167.17316134534
+        y: 1608.1927881789509
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        agent_parameters:
+          instruction:
+            type: constant
+            value: 根据用户输入，调用合适的工具进行回答
+          model:
+            type: constant
+            value:
+              completion_params: {}
+              mode: chat
+              model: Qwen/QwQ-32B-Preview
+              model_type: llm
+              provider: langgenius/siliconflow/siliconflow
+              type: model-selector
+          query:
+            type: constant
+            value: 根据用户输入，搜索出正确的结果
+          tools:
+            type: constant
+            value:
+            - enabled: true
+              extra:
+                description: ''
+              parameters: {}
+              provider_name: time
+              schemas:
+              - auto_generate: null
+                default: '%Y-%m-%d %H:%M:%S'
+                form: form
+                human_description:
+                  en_US: Time format in strftime standard.
+                  ja_JP: Time format in strftime standard.
+                  pt_BR: Time format in strftime standard.
+                  zh_Hans: strftime 标准的时间格式。
+                label:
+                  en_US: Format
+                  ja_JP: Format
+                  pt_BR: Format
+                  zh_Hans: 格式
+                llm_description: null
+                max: null
+                min: null
+                name: format
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: UTC
+                form: form
+                human_description:
+                  en_US: Timezone
+                  ja_JP: Timezone
+                  pt_BR: Timezone
+                  zh_Hans: 时区
+                label:
+                  en_US: Timezone
+                  ja_JP: Timezone
+                  pt_BR: Timezone
+                  zh_Hans: 时区
+                llm_description: null
+                max: null
+                min: null
+                name: timezone
+                options:
+                - label:
+                    en_US: UTC
+                    ja_JP: UTC
+                    pt_BR: UTC
+                    zh_Hans: UTC
+                  value: UTC
+                - label:
+                    en_US: America/New_York
+                    ja_JP: America/New_York
+                    pt_BR: America/New_York
+                    zh_Hans: 美洲/纽约
+                  value: America/New_York
+                - label:
+                    en_US: America/Los_Angeles
+                    ja_JP: America/Los_Angeles
+                    pt_BR: America/Los_Angeles
+                    zh_Hans: 美洲/洛杉矶
+                  value: America/Los_Angeles
+                - label:
+                    en_US: America/Chicago
+                    ja_JP: America/Chicago
+                    pt_BR: America/Chicago
+                    zh_Hans: 美洲/芝加哥
+                  value: America/Chicago
+                - label:
+                    en_US: America/Sao_Paulo
+                    ja_JP: America/Sao_Paulo
+                    pt_BR: América/São Paulo
+                    zh_Hans: 美洲/圣保罗
+                  value: America/Sao_Paulo
+                - label:
+                    en_US: Asia/Shanghai
+                    ja_JP: Asia/Shanghai
+                    pt_BR: Asia/Shanghai
+                    zh_Hans: 亚洲/上海
+                  value: Asia/Shanghai
+                - label:
+                    en_US: Asia/Ho_Chi_Minh
+                    ja_JP: Asia/Ho_Chi_Minh
+                    pt_BR: Ásia/Ho Chi Minh
+                    zh_Hans: 亚洲/胡志明市
+                  value: Asia/Ho_Chi_Minh
+                - label:
+                    en_US: Asia/Tokyo
+                    ja_JP: Asia/Tokyo
+                    pt_BR: Asia/Tokyo
+                    zh_Hans: 亚洲/东京
+                  value: Asia/Tokyo
+                - label:
+                    en_US: Asia/Dubai
+                    ja_JP: Asia/Dubai
+                    pt_BR: Asia/Dubai
+                    zh_Hans: 亚洲/迪拜
+                  value: Asia/Dubai
+                - label:
+                    en_US: Asia/Kolkata
+                    ja_JP: Asia/Kolkata
+                    pt_BR: Asia/Kolkata
+                    zh_Hans: 亚洲/加尔各答
+                  value: Asia/Kolkata
+                - label:
+                    en_US: Asia/Seoul
+                    ja_JP: Asia/Seoul
+                    pt_BR: Asia/Seoul
+                    zh_Hans: 亚洲/首尔
+                  value: Asia/Seoul
+                - label:
+                    en_US: Asia/Singapore
+                    ja_JP: Asia/Singapore
+                    pt_BR: Asia/Singapore
+                    zh_Hans: 亚洲/新加坡
+                  value: Asia/Singapore
+                - label:
+                    en_US: Europe/London
+                    ja_JP: Europe/London
+                    pt_BR: Europe/London
+                    zh_Hans: 欧洲/伦敦
+                  value: Europe/London
+                - label:
+                    en_US: Europe/Berlin
+                    ja_JP: Europe/Berlin
+                    pt_BR: Europe/Berlin
+                    zh_Hans: 欧洲/柏林
+                  value: Europe/Berlin
+                - label:
+                    en_US: Europe/Moscow
+                    ja_JP: Europe/Moscow
+                    pt_BR: Europe/Moscow
+                    zh_Hans: 欧洲/莫斯科
+                  value: Europe/Moscow
+                - label:
+                    en_US: Australia/Sydney
+                    ja_JP: Australia/Sydney
+                    pt_BR: Australia/Sydney
+                    zh_Hans: 澳大利亚/悉尼
+                  value: Australia/Sydney
+                - label:
+                    en_US: Pacific/Auckland
+                    ja_JP: Pacific/Auckland
+                    pt_BR: Pacific/Auckland
+                    zh_Hans: 太平洋/奥克兰
+                  value: Pacific/Auckland
+                - label:
+                    en_US: Africa/Cairo
+                    ja_JP: Africa/Cairo
+                    pt_BR: Africa/Cairo
+                    zh_Hans: 非洲/开罗
+                  value: Africa/Cairo
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: select
+              settings:
+                format:
+                  value: '%Y-%m-%d %H:%M:%S'
+                timezone:
+                  value: UTC
+              tool_label: 获取当前时间
+              tool_name: current_time
+              type: builtin
+            - enabled: true
+              extra:
+                description: ''
+              parameters:
+                query:
+                  auto: 1
+                  value: null
+                top_n:
+                  auto: 1
+                  value: null
+              provider_name: langgenius/github/github
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: You want to find the project development language, keywords,
+                    For example. Find 10 Python developed PDF document parsing projects.
+                  ja_JP: You want to find the project development language, keywords,
+                    For example. Find 10 Python developed PDF document parsing projects.
+                  pt_BR: Você deseja encontrar a linguagem de desenvolvimento do projeto,
+                    palavras-chave, Por exemplo. Encontre 10 projetos de análise de
+                    documentos PDF desenvolvidos em Python.
+                  zh_Hans: 你想要找的项目开发语言、关键字，如：找10个Python开发的PDF文档解析项目。
+                label:
+                  en_US: query
+                  ja_JP: query
+                  pt_BR: consulta
+                  zh_Hans: 关键字
+                llm_description: The query of you want to search, format query condition
+                  like "keywords+language:js", language can be other dev languages.
+                max: null
+                min: null
+                name: query
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: 5
+                form: llm
+                human_description:
+                  en_US: Number of records returned by sorting based on stars. 5 is
+                    returned by default.
+                  ja_JP: Number of records returned by sorting based on stars. 5 is
+                    returned by default.
+                  pt_BR: Número de registros retornados por classificação com base
+                    em estrelas. 5 é retornado por padrão.
+                  zh_Hans: 基于stars排序返回的记录数, 默认返回5条。
+                label:
+                  en_US: Top N
+                  ja_JP: Top N
+                  pt_BR: Topo N
+                  zh_Hans: Top N
+                llm_description: Extract the first N records from the returned result.
+                max: null
+                min: null
+                name: top_n
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: number
+              settings: {}
+              tool_label: 仓库搜索
+              tool_name: github_repositories
+              type: builtin
+        agent_strategy_label: FunctionCalling
+        agent_strategy_name: function_calling
+        agent_strategy_provider_name: langgenius/agent/agent
+        desc: ''
+        output_schema: null
+        plugin_unique_identifier: langgenius/agent:0.0.12@6b1af1fc9a716f494ff669f64c6dd4d2ae29fb5f60c15919df3f2dac89c700da
+        selected: true
+        title: Agent
+        type: agent
+      height: 198
+      id: '1743130472185'
+      position:
+        x: 814.9734138097411
+        y: 1767.5822476458977
+      positionAbsolute:
+        x: 814.9734138097411
+        y: 1767.5822476458977
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1743130472185.text#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 7 (1)
+        type: answer
+        variables: []
+      height: 105
+      id: '17431306588780'
+      position:
+        x: 1172.9198098794507
+        y: 1807.5614375027437
+      positionAbsolute:
+        x: 1172.9198098794507
+        y: 1807.5614375027437
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -164.68273318556476
+      y: -1153.9542271266862
+      zoom: 0.8705505632961265
