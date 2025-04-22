@@ -106,31 +106,31 @@ workflow:
     nodes:
     - data:
         desc: ''
-        selected: true
+        selected: false
         title: 开始
         type: start
         variables:
-        - label: username
+        - label: 用户名
           max_length: 48
           options: []
           required: true
           type: text-input
           variable: username
-        - label: phone
+        - label: 手机号
           max_length: 48
           options: []
           required: true
-          type: text-input
+          type: number
           variable: phone
       height: 116
       id: '1743257702975'
       position:
-        x: 80
+        x: 78.83347096042388
         y: 287.8326451978806
       positionAbsolute:
-        x: 80
+        x: 78.83347096042388
         y: 287.8326451978806
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -183,7 +183,7 @@ workflow:
       positionAbsolute:
         x: 769.8367740105972
         y: 287.8326451978806
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -239,6 +239,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: -27.021708207680206
-      y: 194.0999292788706
+      x: -471.0217082076802
+      y: 313.17130728744405
       zoom: 0.8572439828530728
