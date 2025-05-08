@@ -1,0 +1,231 @@
+app:
+  description: 支持将用户输入的 Markdown 格式文本转换为 DocX 文件输出。
+  icon: 2ea87873-0445-4bc3-85f2-b407d023bfe0
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: Markdown 转 DocX
+  use_icon_as_answer_icon: true
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: stvlynn/doc:0.0.1@f02f0f26cb1c81eb1309d79277678688af037554d5c90e06982db17763d7b43f
+kind: app
+version: 0.2.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions: []
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - remote_url
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: 您好！我是一个专业的数据分析助手，需要查询什么数据请call我，希望能帮到您！
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions:
+    - 西安2024年耗电最高的报账点是哪个
+    - 对比宝鸡和渭南2024年全年电费的报账金额
+    - 分析2024年各地市电费报账情况
+    - 统计铜川2024年12个月报账情况
+    - 汉中2024年每个月的平均单价是多少
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1743820929916-source-1745730713815-target
+      source: '1743820929916'
+      sourceHandle: source
+      target: '1745730713815'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: answer
+      id: 1745730713815-source-1745730807069-target
+      source: '1745730713815'
+      sourceHandle: source
+      target: '1745730807069'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 54
+      id: '1743820929916'
+      position:
+        x: 30
+        y: 261.5
+      positionAbsolute:
+        x: 30
+        y: 261.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The Markdown content to be converted to Word document
+            ja_JP: Word ドキュメントに変換する Markdown コンテンツ
+            pt_BR: O conteúdo Markdown a ser convertido para documento Word
+            zh_Hans: 要转换为Word文档的Markdown内容
+          label:
+            en_US: Markdown Content
+            ja_JP: Markdown コンテンツ
+            pt_BR: Conteúdo Markdown
+            zh_Hans: Markdown内容
+          llm_description: The Markdown content that will be converted to a Word document
+          max: null
+          min: null
+          name: markdown_content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The title of the Word document
+            ja_JP: Word ドキュメントのタイトル
+            pt_BR: O título do documento Word
+            zh_Hans: Word文档的标题
+          label:
+            en_US: Document Title
+            ja_JP: ドキュメントタイトル
+            pt_BR: Título do Documento
+            zh_Hans: 文档标题
+          llm_description: The title that will be displayed at the top of the Word
+            document
+          max: null
+          min: null
+          name: title
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          markdown_content: ''
+          title: ''
+        provider_id: stvlynn/doc/doc
+        provider_name: stvlynn/doc/doc
+        provider_type: builtin
+        selected: true
+        title: Markdown转DOCX转换器
+        tool_configurations: {}
+        tool_description: 将Markdown内容转换为DOCX（Word）文档
+        tool_label: Markdown转DOCX转换器
+        tool_name: markdown_to_docx_converter
+        tool_parameters:
+          markdown_content:
+            type: mixed
+            value: '# Dify Chat Web
+
+
+
+              ![GitHub License](https://img.shields.io/github/license/lexmin0412/dify-chat)
+              ![GitHub Created At](https://img.shields.io/github/created-at/lexmin0412/dify-chat)
+              ![GitHub contributors](https://img.shields.io/github/contributors/lexmin0412/dify-chat)
+              ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/lexmin0412/dify-chat)![GitHub
+              code size in bytes](https://img.shields.io/github/languages/code-size/lexmin0412/dify-chat)
+
+
+
+              一个基于 Dify API 的 AI 会话 Web 应用, 支持单应用、多应用等多种模式，提供开箱即用的应用配置管理功能。支持不同类型的
+              Dify 应用，适配深度思考、思维链、图表等多种形式输出。
+
+
+
+              如果你觉得这个项目还不错的话，请动动你的小手指点个 Star ⭐️ 吧～'
+          title:
+            type: mixed
+            value: Dify Chat
+        type: tool
+      height: 54
+      id: '1745730713815'
+      position:
+        x: 332.57142857142856
+        y: 261.5
+      positionAbsolute:
+        x: 332.57142857142856
+        y: 261.5
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1745730713815.text#}}{{#1745730713815.files#}}'
+        desc: ''
+        selected: false
+        title: 直接回复 5
+        type: answer
+        variables: []
+      height: 123
+      id: '1745730807069'
+      position:
+        x: 638
+        y: 261.5
+      positionAbsolute:
+        x: 638
+        y: 261.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 132
+      y: 38.99999999999994
+      zoom: 0.7
